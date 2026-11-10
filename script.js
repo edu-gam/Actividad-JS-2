@@ -10,9 +10,10 @@ const busqueda = new Promise((resolve,reject) => {
     if (estudiantes) {
         resolve("Nombre", estudiantes.id, "Edad:", estudiantes.edad)
     } else {
-        reject("no existes un estudiante con el ID", estudiantes.id)
+        reject("no existe un estudiante con el ID", estudiantes.id)
     } 
 });
 
 busqueda
-.catch((error) => console.log("ERROR" ,error))
+.then((result) => console.log("Resultado:", new Promise((resolve) => resolve(result))))
+.catch((error) => console.log("ERROR" , reject(error)))
